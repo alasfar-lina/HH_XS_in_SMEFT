@@ -16,7 +16,7 @@ v=246.0
 MT= 173.2
 MH=125.1
 #alps= 0.1198 # alpha_s at MZ, it is better to use the running alphas
-alps =  funcalps(2.*MH) # renormalisation scale. 
+alps =  funcalps(2.*MH) # renormalisation scale.
 L=1e6 # new physics scale
 
 
@@ -46,4 +46,4 @@ def Kfac(CH,CgH,ckin,CtH):
 
 
 if __name__ == '__main__':
-    print("The k-factor for CH= 10 is %f"%(Kfac(10.0,0.0,0.0,0.0)))
+    print("The k-factor for CH= 10 is %f"%(XSNLO(.0,.0,.0,1.0)-1))

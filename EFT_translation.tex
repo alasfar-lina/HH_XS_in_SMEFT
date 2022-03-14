@@ -1,0 +1,148 @@
+\documentclass[12pt]{article}
+%---- needed packages -------------------------------------------------
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{color}
+%\usepackage{longtable}
+\usepackage[normal]{subfigure}
+%\usepackage{cite}
+\usepackage{rotating}
+\usepackage{hyperref}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{cite}
+\usepackage{slashed}
+
+%---- symbol short-hands and redefinitions -----------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%% referencing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\eq#1{{Eq.~(\ref{#1})}}
+\def\eqs#1#2{{Eqs.~(\ref{#1})--(\ref{#2})}}
+\def\fig#1{{Fig.~\ref{#1}}}
+\def\figs#1#2{{Figs.~\ref{#1}--\ref{#2}}}
+\def\Table#1{{Table~\ref{#1}}}
+\def\Tables#1#2{{Tables~\ref{#1}--\ref{#2}}}
+\def\sect#1{{Sect.~\ref{#1}}}
+\def\sects#1#2{{Sects.~\ref{#1}--\ref{#2}}}
+\def\app#1{{Appendix~\ref{#1}}}
+\def\apps#1#2{{Apps.~\ref{#1}--\ref{#2}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% math %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\vev#1{\left\langle #1\right\rangle}
+\def\abs#1{\left| #1\right|}
+\def\mod#1{\abs{#1}}
+\def\Im{\mbox{Im}\,}
+\def\Re{\mbox{Re}\,}
+\def\Tr{\mbox{Tr}\,}
+\def\det{\mbox{det}\,}
+\def\etal{\hbox{\it et al.}}
+\def\ie{\hbox{\it i.e.}{}}
+\def\eg{\hbox{\it e.g.}{}}
+\def\etc{\hbox{\it etc}{}}
+
+
+\newcommand{\rr}[1]{{\color{red}#1}}
+\newcommand{\bb}[1]{{\color{blue}#1}}
+
+
+%opening
+\title{\huge{\bf{Recommendations for the use of effective theory for $HH$ at NLO}}}
+
+%\date{}
+\author{Lina Alasfar, Christina Dimitriadi, Arnaud Ferrari, Ramona Gr\"ober}
+
+\begin{document}
+
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+%\tableofcontents
+Here we shall collect the relevant formulae for translating 
+among different EFTs for the di-Higgs process.
+We will use the HEFT Lagrangian as given in \cite{Buchalla:2018yce}
+such that the NLO QCD corrections from there can be used. The Lagrangian given in \cite{Buchalla:2018yce} is
+\begin{equation}
+\mathcal{L}=-m_t\left( c_t \frac{h}{v}+c_{tt} \frac{h^2}{v^2}\right)-c_{hhh}\frac{m_h^2}{2 v^2}h^3+\frac{\alpha_s}{8 \pi}\left(c_{ggh}\frac{h}{v} +c_{gghh}\frac{h^2}{v^2}  \right)G_{\mu\nu}^a G^{\mu\nu,a}\,.
+\end{equation}
+Instead we define the SILH Lagrangian \cite{Contino:2013kra} as
+\begin{equation}
+\mathcal{L}_{SILH}=\frac{\bar{c}_H}{2 v^2}\partial_{\mu}(H^{\dagger}H ) \partial^{\mu}(H^{\dagger}H )-\frac{\bar{c}_6 \lambda}{v^2}(H^{\dagger}H)^3+\left(\frac{\bar{c}_u}{v^2} y_u H^{\dagger}{H}\bar{q}_LH^c t_R + h.c.\right)+\frac{\bar{c}_g g_S^2}{m_W^2} H^{\dagger} H G_{\mu\nu}^a G^{\mu\nu,a}
+\end{equation}
+The operator with Wilson coefficient $\bar{c}_H$ is commonly removed via a field redefinition
+\begin{equation}
+h \to h -\frac{\bar{c}_H}{2}\left( h +\frac{h^2}{v}+\frac{h^3}{3v^2}\right) \,.\label{SILH:field}
+\end{equation}
+It leads to a rescaling of all Higgs boson interactions of the SM Lagrangian.
+The relevant operators of the Warsaw basis \cite{Grzadkowski:2010es} are defined as
+\begin{equation}
+\begin{split}
+\mathcal{L}_{Warsaw}&=C_{H,\Box} (H^{\dagger} H)\Box (H^{\dagger } H)+ C_{HD}(H^{\dagger} D_{\mu}H)^*(H^{\dagger}D^{\mu}H)+ C_H (H^{\dagger}H)^3 \\ &+\left( C_{uH} H^{\dagger}{H}\bar{q}_LH^c t_R + h.c.\right)+C_{HG} H^{\dagger} H G_{\mu\nu}^a G^{\mu\nu,a}\,.
+\end{split}
+\end{equation}
+Note that the Wilson coefficients here have dimension $[1/\text{mass}^2]$, while for the HEFT and SILH Lagrangian we have defined them dimensionless.
+While the Warsaw basis is constructed such that derivative operators are systematically removed by equations of motion, two derivative Higgs interactions remain. They contain covariant derivatives rather than simple derivatives and hence cannot be removed by field redefinitions. This also leads to the fact that there exists no gauge independent field redefinition removing all derivative Higgs field interactions. 
+The standard field redefinition to be made in the Warsaw basis in order to find a canonically normalised Higgs kinetic term is
+\begin{equation}
+H=\left( \begin{array}{c} 0 \\ h(1+c_{H,kin}) + v \end{array} \right)
+\end{equation} 
+with 
+\begin{equation}
+c_{H,kin}=\left(C_{H,\Box}-\frac{1}{4}C_{HD}\right) v^2\,.
+\end{equation}
+In order to find a translation between the HEFT and Warsaw basis in terms of existing couplings, this is not a good choice since it leads  to Higgs self-interactions with derivatives, $h(\partial_{\mu}h)^2$ and $h^2(\partial_{\mu}h)^2$, which do not appear in the HEFT Lagrangian.  Instead one can use a gauge-dependent field redefinition (which transforms Goldstone/Higgs components in a different way). Such a choice is tricky but we do not need to care for any issues regarding gauge dependence since we do not have gauge fields in the considered process. The full gauge dependent field redefinition is for instance given in \cite{Hartmann:2015aia}. We just need the one of the Higgs  
+\begin{equation}
+h \to h + c_{H,kin}\left( h +\frac{h^2}{v}+\frac{h^3}{3v^2}\right)\,. \label{fieldref}
+\end{equation}
+Since the field redefinition in eq.~\eqref{fieldref} is equivalent to the one of the SILH in eq.~\eqref{SILH:field} we can directly translate.
+A comment is in order about further issues regarding SMEFT: The SM input changes with effective operators. For instance the vacuum expectation value is usually obtained from $G_F$ which again gets contributions for instance from dim-6 4 fermion operators. We refer here to \cite{Brivio:2017vri} for further details (and focus here on the relevant Higgs effective operators).
+Note that according to \cite{Buchalla:2018yce} chromomagnetic operators are of higher order in the HEFT expansion while in SMEFT they are not. Since they are not included in the analysis of  \cite{Buchalla:2018yce} we won't include them here as well. We also do not include CP-violating operators. The NLO QCD corrections for CP-violating operators are so far only known in the infinite top mass limit \cite{Grober:2017gut}.
+\begin{table}
+\renewcommand*{\arraystretch}{1.6}
+\begin{center}
+\begin{tabular}{c c c}
+\hline
+\textbf{ HEFT} & \textbf {SILH} &  \textbf{Warsaw}\\ \hline
+$c_{hhh}$ & $1+\bar{c}_6 -\frac{3}{2}\bar{c}_H $ & $1 - 2\frac{v^4}{m_h^2}C_H+3 c_{H,kin}$\\
+$c_t$ &$ 1- \frac{\bar{c}_H}{2}-\bar{c}_u$ & $ 1+ c_{H,kin}-C_{uH}\frac{v^3}{\sqrt{2}m_t}$ \\
+$c_{tt}$ & $-\left(\frac{3}{2}\bar{c}_u + \frac{\bar{c}_H}{2} \right)$&$ -C_{uH}\frac{3v^3}{2\sqrt{2}m_t}+c_{H,kin}$  \\
+$c_{ggh}$ & $\frac{128 \pi^2}{g_2^2} \bar{c}_{g} $ &$\frac{8 \pi}{\alpha_s} v^2 C_{HG}$ \\
+$c_{gghh}$ & $\frac{64 \pi^2}{g_2^2} \bar{c}_{g} $& $\frac{4 \pi}{\alpha_s} v^2 C_{HG}$\\
+\end{tabular}
+\end{center}
+\caption{Translation table HEFT/SILH and Warsaw basis. $g_2$ denotes the weak coupling constant with $m_W=g_2 v/2$. \label{tab:translation}}
+\end{table}
+
+\section{Reweighting}
+
+For the experimental analyses it is useful and time-saving to define a reweighting procedure. The idea is to reweight the SM NLO cross section with pre-tabulated values. These values are available in \cite{Buchalla:2018yce} and are given in terms of a table in $M_{HH}$. A POWHEG implementation of the EFT cross section has been made available by \cite{Heinrich:2020ckp}. Using the shape benchmarks proposed in \cite{Capozi:2019xsi} we have verified that the reweighting procedure works nicely but for the first bin. \textcolor{red}{Full cross section though different.}
+\par
+We are furthermore interested in interpreting the results also in other EFT hypothesis. For this we have cross checked the translation table in \ref{tab:translation} comparing the $M_{HH}$ distributions using MG5@NLO \cite{Alwall:2014hca} for SMEFT in the Warsaw and SILH basis, using private code, cross checked against HPAIR \cite{SPIRA, Dawson:1998py} \footnote{ For the EFT implementation in HPAIR see \cite{Grober:2015cwa}.} and the POWHEG non-linear EFT implementation \cite{Heinrich:2020ckp}.
+The comparison has been done at LO. For the $C_{HG}$ we used parameter points in which the EFT contribution is dominant over the SM as  an implementation of the interference between SM and new physics contribution at the moment is not straightforward within MG5@NLO.
+We note that the EFT coefficient $C_{HG}$ in the Warsaw basis has an $\alpha_s$ in his translation. As $\alpha_s=\alpha_s(\mu)$ for which the right scale choice is $\mu=M_{HH}/2$ for a correct translation to the $HH$ process we should take into account its running effects. They can be though absorped by redefining $C_{HG}\to C_{HG} \alpha_s$, such that the interpretation again becomes straightforward.
+
+Further proposals to proceed:
+
+\begin{itemize}
+\item linear vs. quadratic terms, double insertions vs. single insertions
+\item $K$-factor: how much can it actually change within the current global fit bounds of the operators within SMEFT (as this question was asked various times). Check also the Spira hypothesis of large changes whenever there is strong negative interference, which is shifted with respect to the LO prediction. (How realistic is that in actual models?)
+\end{itemize}
+
+\section{Recommendations}
+What do we actually recommend?
+That the reweighting can be used as proposed by Gudrun et al with attention to the first bin.
+The use of our translation table? (taking into account the $\alpha_s$ issue)?
+Which kind of error estimate (PDF+alphas) etc to use for an EFT point? 
+What are the "EFT" errors and how to estimate them (see my item point 1 in the section before), limits on EFT coefficients as function of $\sqrt{s}$?
+How should results on EFT analysis be presented?
+
+
+\bibliographystyle{utphys.bst}
+\bibliography{bibliography}
+
+
+\end{document}
